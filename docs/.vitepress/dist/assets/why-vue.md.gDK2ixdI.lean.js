@@ -1,0 +1,1 @@
+import{_ as t,c as a,o,ae as i}from"./chunks/framework.BmN8lrCQ.js";const d=JSON.parse('{"title":"Why Vue?","description":"","frontmatter":{},"headers":[],"relativePath":"why-vue.md","filePath":"why-vue.md"}'),r={name:"why-vue.md"};function n(u,e,s,l,p,h){return o(),a("div",null,e[0]||(e[0]=[i("",10)]))}const w=t(r,[["render",n]]);export{d as __pageData,w as default};
