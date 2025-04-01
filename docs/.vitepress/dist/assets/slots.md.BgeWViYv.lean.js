@@ -1,0 +1,1 @@
+import{_ as e,c as n,o,ae as l}from"./chunks/framework.BmN8lrCQ.js";const h=JSON.parse('{"title":"Slots","description":"","frontmatter":{},"headers":[],"relativePath":"slots.md","filePath":"slots.md"}'),a={name:"slots.md"};function s(r,t,p,i,d,c){return o(),n("div",null,t[0]||(t[0]=[l("",48)]))}const u=e(a,[["render",s]]);export{h as __pageData,u as default};
