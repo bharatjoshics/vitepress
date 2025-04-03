@@ -1,0 +1,1 @@
+import{_ as e,c as n,o,ae as l}from"./chunks/framework.BmN8lrCQ.js";const h=JSON.parse('{"title":"Teleport","description":"","frontmatter":{},"headers":[],"relativePath":"teleport.md","filePath":"teleport.md"}'),r={name:"teleport.md"};function p(a,t,i,d,g,s){return o(),n("div",null,t[0]||(t[0]=[l("",18)]))}const u=e(r,[["render",p]]);export{h as __pageData,u as default};
