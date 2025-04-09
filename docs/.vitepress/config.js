@@ -77,6 +77,16 @@ export default {
             {text: 'Routing', link: '/routing'},
             {text: 'HTTP Requests', link: '/http-requests'}
           ]
+        },
+        {
+          text: 'State Management with VUEX',
+          items: [
+            {text: 'Intro', link: '/vuex-intro'},
+            {text: 'Creating and Using Store', link: '/vuex-store'},
+            {text: 'Example Project of VUEX', link: '/vuex-project'},
+            {text: 'Project Explaination', link: '/project-explaination'},
+            {text: 'Download Project', link: '/download-vuex-project'}
+          ]
         }
       ]
     }
