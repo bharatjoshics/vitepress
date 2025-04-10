@@ -1,7 +1,7 @@
 export default {
   title: 'VUE JS NOTES',
   description: 'Custom VUE JS Documentation',
-  base: '/vitepress/',
+  base: '/',
     themeConfig: {
       sidebar: [
         {
