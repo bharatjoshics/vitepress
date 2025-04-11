@@ -8,40 +8,44 @@ We will now create component elements with v-for based on an array with food ite
 ## Example
 - main.js will remain same
 
-    **App.js**
+**App.vue**
 
-        <template>
-        <h1>Food</h1>
-        <div id="wrapper">
-            <food-item
-            v-for="x in foods"
-            v-bind:food-name="x"/>
-        </div>
-        </template>
+```vue
+<template>
+<h1>Food</h1>
+<div id="wrapper">
+    <food-item
+    v-for="x in foods"
+    v-bind:food-name="x"/>
+</div>
+</template>
 
-        <script>
-        export default {
-            data() {
-            return {
-                foods: ['Apples','Pizza','Rice','Fish','Cake']
-            };
-            }
-        }
-        </script>
+<script>
+export default {
+    data() {
+    return {
+        foods: ['Apples','Pizza','Rice','Fish','Cake']
+    };
+    }
+}
+</script>
+```
 
-    **FoodItem.vue**
+**FoodItem.vue**
 
-        <template>
-        <div>
-            <h2>{ { foodName } }</h2>
-        </div>
-        </template>
+```vue
+<template>
+<div>
+    <h2>{{ foodName }}</h2>
+</div>
+</template>
 
-        <script>
-        export default {
-            props: ['foodName']
-        }
-        </script>
+<script>
+export default {
+    props: ['foodName']
+}
+</script>
+```
 
 Previously, we are calling props manually.
 

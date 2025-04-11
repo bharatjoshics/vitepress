@@ -6,42 +6,44 @@ After writing v-show as an HTML attribute we must give a conditon to decide to h
 ## Example
 Display the < div > element only if the showDiv property is set to 'true'.
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <title>v-show example</title>
-    <style>
-        #app {
-        border: black dashed 1px;
-        width: 200px;
-        padding: 0 20px 20px 20px;
-        }
-        #app div {
-        padding: 20px;
-        background-color: lightgreen;
-        font-weight: bold;
-        }
-    </style>
-    </head>
-    <body>
-    <div id="app">
-    <div v-show="showDiv">This div tag can be hidden</div>
-    </div>
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>v-show example</title>
+<style>
+    #app {
+    border: black dashed 1px;
+    width: 200px;
+    padding: 0 20px 20px 20px;
+    }
+    #app div {
+    padding: 20px;
+    background-color: lightgreen;
+    font-weight: bold;
+    }
+</style>
+</head>
+<body>
+<div id="app">
+<div v-show="showDiv">This div tag can be hidden</div>
+</div>
 
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script>
-    const app = Vue.createApp({
-        data() {
-        return {
-            showDiv: true
-        }
-        }
-    })
-    app.mount('#app')
-    </script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+const app = Vue.createApp({
+    data() {
+    return {
+        showDiv: true
+    }
+    }
+})
+app.mount('#app')
+</script>
 
-    </body>
-    </html>
+</body>
+</html>
+```
 
 ## v-show vs v-if
 The difference between v-show and v-if is that v-if creates (renders) the element depending on the condition, but with v-show the element is already created, v-show only changes its visibility.

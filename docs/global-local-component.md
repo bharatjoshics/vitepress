@@ -28,20 +28,24 @@ Suppose there is a 'Header' component which we need only in 'App.vue' file, so i
 
 Here is how it can be done - 
 
-    <script>
-        import Header from './components/Header.vue'
-    </script>
+```vue
+<script>
+    import Header from './components/Header.vue'
+</script>
+```
+Here, we have imported the 'Header' component in the 'App.vue' file.
 
-    Here, we have imported the 'Header' component in the 'App.vue' file.
-    Now, we need to register it as component, for that -
+Now, we need to register it as component, for that -
 
-    <script>
-        import Header from './components/Header.vue'
-        export default {
-            components: {
-                'the-header': Header
-            }
+```vue
+<script>
+    import Header from './components/Header.vue'
+    export default {
+        components: {
+            'the-header': Header
         }
-    </script>
+    }
+</script>
+```
 
-    Now, the 'Header' is registered as local component and we can use it with the name 'the-header'.
+Now, the 'Header' is registered as local component and we can use it with the name 'the-header'.

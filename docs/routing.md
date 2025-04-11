@@ -8,53 +8,59 @@ To understand routing in Vue, let's first look at an application that uses a dyn
 
 We can switch between the components using buttons -
 
-   **App.vue**
+**App.vue**
 
-        <template>
-        <p>Choose what part of this page you want to see:</p>
-        <button @click="activeComp = 'animal-collection'">Animals</button>
-        <button @click="activeComp = 'food-items'">Food</button><br>
-        <div>
-            <component :is="activeComp"></component>
-        </div>
-        </template>
+```vue
+<template>
+<p>Choose what part of this page you want to see:</p>
+<button @click="activeComp = 'animal-collection'">Animals</button>
+<button @click="activeComp = 'food-items'">Food</button><br>
+<div>
+    <component :is="activeComp"></component>
+</div>
+</template>
 
-        <script>
-        export default {
-        data() {
-            return {
-                activeComp: ''
-            }
-            }
-        }
-        </script>
+<script>
+export default {
+data() {
+    return {
+        activeComp: ''
+    }
+    }
+}
+</script>
 
-        <style scoped>
-        button {
-            padding: 5px;
-            margin: 10px;
-        }
-        div {
-            border: dashed black 1px;
-            padding: 20px;
-            margin: 10px;
-            display: inline-block;
-        }
-        </style>
+<style scoped>
+button {
+    padding: 5px;
+    margin: 10px;
+}
+div {
+    border: dashed black 1px;
+    padding: 20px;
+    margin: 10px;
+    display: inline-block;
+}
+</style>
+```
 
-   **AnimalCollection.vue**
+**AnimalCollection.vue**
 
-        <template>
-            <h1>Animals!</h1>
-            <p>I want to learn about at least one new animal every year.</p>
-        </template> 
+```vue
+<template>
+    <h1>Animals!</h1>
+    <p>I want to learn about at least one new animal every year.</p>
+</template> 
+```
 
-   **FoodItems.vue**
+**FoodItems.vue**
 
-        <template>
-            <h1>Food!</h1>
-            <p>I like most types of food.</p>
-        </template>
+```vue
+<template>
+    <h1>Food!</h1>
+    <p>I like most types of food.</p>
+</template>
+```
 
 
 ## From Dynamic Component to Routing
@@ -72,52 +78,57 @@ To use routing in Vue on your machine, install the Vue Router library in your pr
 ### Update main.js
 To use routing we must create a router, and we do that in the main.js file.
 
-    import { createApp } from 'vue'
-    import { createRouter, createWebHistory } from 'vue-router'
+```js
+import { createApp } from 'vue'
+import { createRouter, createWebHistory } from 'vue-router'
 
-    import App from './App.vue'
-    import FoodItems from './components/FoodItems.vue'
-    import AnimalCollection from './components/AnimalCollection.vue'
+import App from './App.vue'
+import FoodItems from './components/FoodItems.vue'
+import AnimalCollection from './components/AnimalCollection.vue'
 
-    const router = createRouter({
-        history: createWebHistory(),
-        routes: [
-            { path: '/animals', component: AnimalCollection },
-            { path: '/food', component: FoodItems },
-        ]
-    });
+const router = createRouter({
+    history: createWebHistory(),
+    routes: [
+        { path: '/animals', component: AnimalCollection },
+        { path: '/food', component: FoodItems },
+    ]
+});
 
-    const app = createApp(App)
+const app = createApp(App)
 
-    app.use(router);
-    app.mount('#app')
-
+app.use(router);
+app.mount('#app')
+```
 
 ## Use The < router-view > Component
 To change the content on our page with the new router, we need to remove the dynamic component in the previous example and use the < router-view > component instead -
 
-   **App.vue**
+**App.vue**
 
-        <template>
-        <p>Choose what part of this page you want to see:</p>
-        <button @click="activeComp = 'animal-collection'">Animals</button>
-        <button @click="activeComp = 'food-items'">Food</button><br>
-        <div>
-            <router-view></router-view>
-        </div>
-        </template>
+```vue
+<template>
+<p>Choose what part of this page you want to see:</p>
+<button @click="activeComp = 'animal-collection'">Animals</button>
+<button @click="activeComp = 'food-items'">Food</button><br>
+<div>
+    <router-view></router-view>
+</div>
+</template>
+```
 
-   Now, you can add '/food' to the URL address of your project page in the browser, and the page should update to show the food content.
+Now, you can add '/food' to the URL address of your project page in the browser, and the page should update to show the food content.
 
 
 ## Use The < router-link > Component
 We can replace the buttons with the < router-link > component because that works better with the router.
 
-        <template>
-        <p>Choose what part of this page you want to see:</p>
-        <router-link to="/animals">Animals</router-link>
-        <router-link to="/food">Food</router-link><br>
-        <div>
-            <router-view></router-view>
-        </div>
-        </template>
+```vue
+<template>
+<p>Choose what part of this page you want to see:</p>
+<router-link to="/animals">Animals</router-link>
+<router-link to="/food">Food</router-link><br>
+<div>
+    <router-view></router-view>
+</div>
+</template>
+```

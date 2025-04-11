@@ -7,4 +7,4 @@ Event modifiers are used together with the vue v-on directive.
 - v-on:submit.prevent -> It prevents the default submit behaviour of HTML forms.
 - v-on:click.once -> Make sure that an event can only run once after the page is loaded.
 
-There are many others modifiers available. Checkout "vuejs.org/guide/essentials/event-handling#event-modifiers" for more information.
+There are many others modifiers available. Checkout <a href="vuejs.org/guide/essentials/event-handling#event-modifiers">this</a> for more information.

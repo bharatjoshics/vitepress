@@ -12,110 +12,116 @@ The 'to' attribute value is given as CSS notation, so if we want to send some co
 
 We can see that the content is moved to the body tag by inspecting the page after it has loaded.
 
-   **App.vue**
+**App.vue**
 
-        <template>
-        <h1>Teleport</h1>
-        <comp-one></comp-one>
-        </template>
+```vue
+<template>
+<h1>Teleport</h1>
+<comp-one></comp-one>
+</template>
 
-        <script></script>
+<script></script>
 
-        <style>
-        #app {
-            width: 350px;
-            margin: 10px;
-        }
-        #app > div {
-            border: solid black 2px;
-            padding: 10px;
-            margin-top: 10px;
-            background-color: rgb(186, 228, 255);
-        }
-        h2 {
-            text-decoration: underline;
-        }
-        </style>
+<style>
+#app {
+    width: 350px;
+    margin: 10px;
+}
+#app > div {
+    border: solid black 2px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgb(186, 228, 255);
+}
+h2 {
+    text-decoration: underline;
+}
+</style>
+```
 
-   **CompOne.vue**
+**CompOne.vue**
 
-        <template>
-            <div>
-                <h2>Component</h2>
-                <p>This is the inside of the component.</p>
-                <Teleport to="body">
-                <div id="redDiv">Hello!</div>
-                </Teleport>
-            </div>
-        </template>
+```vue
+<template>
+    <div>
+        <h2>Component</h2>
+        <p>This is the inside of the component.</p>
+        <Teleport to="body">
+        <div id="redDiv">Hello!</div>
+        </Teleport>
+    </div>
+</template>
 
-        <script></script>
+<script></script>
 
-        <style scoped>
-        #redDiv {
-            background-color: lightcoral;
-            margin: 10px;
-            padding: 10px;
-            display: inline-block;
-        }
-        </style>
+<style scoped>
+#redDiv {
+    background-color: lightcoral;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+}
+</style>
+```
 
 If we right-click our page and choose 'Inspect', we can see that the red < div > element is moved out of the component and to the end of the < body > tag.
 
 ## Script and Style of Teleported Elements
 Even though some content is moved out of a component with the < Teleport > tag, relevant code inside the component in the < script > and < style > tags still works for the moved content.
 
-   **App.vue** - Remain same as above
+**App.vue** - Remain same as above
 
-   **CompOne.vue**
+**CompOne.vue**
 
-        <template>
-        <div>
-            <h2>Component</h2>
-            <p>This is the inside of the component.</p>
-            <Teleport to="body">
-            <div 
-                id="redDiv" 
-                @click="toggleVal = !toggleVal" 
-                :style="{ backgroundColor: bgColor }"
-            >
-                Hello!<br>
-                Click me!
-            </div>
-            </Teleport>
-        </div>
-        </template>
+```vue
+<template>
+<div>
+    <h2>Component</h2>
+    <p>This is the inside of the component.</p>
+    <Teleport to="body">
+    <div 
+        id="redDiv" 
+        @click="toggleVal = !toggleVal" 
+        :style="{ backgroundColor: bgColor }"
+    >
+        Hello!<br>
+        Click me!
+    </div>
+    </Teleport>
+</div>
+</template>
 
-        <script>
-        export default {
-        data() {
-            return {
-            toggleVal: true
-            }
-        },
-        computed: {
-            bgColor() {
-            if (this.toggleVal) {
-                return 'lightpink'
-            }
-            else {
-                return 'lightgreen'
-            }
-            }
-        }
-        }
-        </script>
+<script>
+export default {
+data() {
+    return {
+    toggleVal: true
+    }
+},
+computed: {
+    bgColor() {
+    if (this.toggleVal) {
+        return 'lightpink'
+    }
+    else {
+        return 'lightgreen'
+    }
+    }
+}
+}
+</script>
 
-        <style scoped>
-        #redDiv {
-        margin: 10px;
-        padding: 10px;
-        display: inline-block;
-        }
+<style scoped>
+#redDiv {
+margin: 10px;
+padding: 10px;
+display: inline-block;
+}
 
-        #redDiv:hover {
-        cursor: pointer;
-        }
-        </style>
+#redDiv:hover {
+cursor: pointer;
+}
+</style>
+```
 
-   Relevant code from the < style > and < script > tags still works for the teleported < div > tag even though it is no longer inside the component after compilation.
+Relevant code from the < style > and < script > tags still works for the teleported < div > tag even though it is no longer inside the component after compilation.

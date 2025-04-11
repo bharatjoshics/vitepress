@@ -14,53 +14,55 @@ The new property value is always available as an input argument to the watchers 
 ## Example
 An < input type = " range " > element is used to change a value 'rangeVal'. A watcher is used to prevent the user from choosing values between 20 and 60.
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <title>Range Watcher</title>
-    <style>
-        #app {
-        border: dashed black 1px;
-        display: inline-block;
-        padding: 10px;
-        }
-        #app > p {
-        font-size: large;
-        font-weight: bold;
-        text-align: center;
-        }
-    </style>
-    </head>
-    <body>
-    <div id="app">
-    <input type="range" min="0" max="100" step="1" v-model="rangeVal">
-    <p><code>{{ rangeVal }}</code></p> 
-    </div>
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Range Watcher</title>
+<style>
+    #app {
+    border: dashed black 1px;
+    display: inline-block;
+    padding: 10px;
+    }
+    #app > p {
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    }
+</style>
+</head>
+<body>
+<div id="app">
+<input type="range" min="0" max="100" step="1" v-model="rangeVal">
+<p>{{ rangeVal }}</p> 
+</div>
 
 
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script>
-    const app = Vue.createApp({
-        data() {
-        return {
-            rangeVal: 70
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+const app = Vue.createApp({
+    data() {
+    return {
+        rangeVal: 70
+    }
+    },
+    watch: {
+    rangeVal(val) {
+        if( val>20 && val<60 ){
+        if(val<40){
+            this.rangeVal = 20;
         }
-        },
-        watch: {
-        rangeVal(val) {
-            if( val>20 && val<60 ){
-            if(val<40){
-                this.rangeVal = 20;
-            }
-            else{
-                this.rangeVal = 60;
-            }
-            }
+        else{
+            this.rangeVal = 60;
         }
         }
-    })
-    app.mount('#app')
-    </script>
+    }
+    }
+})
+app.mount('#app')
+</script>
 
-    </body>
-    </html>
+</body>
+</html>
+```

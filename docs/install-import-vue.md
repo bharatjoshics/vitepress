@@ -39,38 +39,42 @@ To install the VUE JS follow-
 ## Import VUE JS
 We're now ready to import the VUE JS in our project. It is required to use the vue components and elements in our application.
 
-    `<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>`
+```html
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+```
 
     Add the following line inside head element of your HTML page like this-
     
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Notes</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 20px;
-                padding: 20px;
-            }
-            h1 {
-                color: #333;
-            }
-            .container {
-                max-width: 800px;
-                margin: auto;
-            }
-        </style>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+    </style>
 
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    
-    </head>
-    <body>
-        <div class="container">
-            <h1>Welcome to My Notes</h1>
-            <p>This is a simple HTML template.</p>
-        </div>
-    </body>
-    </html>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Notes</h1>
+        <p>This is a simple HTML template.</p>
+    </div>
+</body>
+</html>
+```
